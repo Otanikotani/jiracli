@@ -93,7 +93,7 @@ nativeImage {
         Paths.get("java.security.overrides"))
   }
 
-  finalizedBy {
+  doLast {
     new File("java.security.overrides").delete()
   }
 }
