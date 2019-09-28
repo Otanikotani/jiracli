@@ -87,13 +87,6 @@ shadowJar {
 
 nativeImage {
   dependsOn shadowJar
-
-  //This is a hack. For some reason, -J-Djava.security.properties=java.security.overrides
-  //cannot see relative paths
-  doFirst {
-    Files.copy(Paths.get("graal/java.security.overrides"),
-        Paths.get("java.security.overrides"))
-  }
 }
 
 graal {
