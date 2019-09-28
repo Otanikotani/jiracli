@@ -82,7 +82,7 @@ jar {
 }
 
 shadowJar {
-  archiveName = "jira-cli.jar"
+  archiveName = "jiracli.jar"
 }
 
 //This is a hack. For some reason, -J-Djava.security.properties=java.security.overrides
@@ -100,7 +100,7 @@ nativeImage {
 
 graal {
   mainClass 'jiracli.CheckSum'
-  outputName "jira-cli-${System.getProperty("os.name").toLowerCase().replace(' ', '_') + '-' + System.getProperty("os.arch")}"
+  outputName "jiracli-${System.getProperty("os.name").toLowerCase().replace(' ', '_') + '-' + System.getProperty("os.arch")}"
   option '--no-server'
   option '--enable-https'
   option '--enable-all-security-services'
