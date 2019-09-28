@@ -45,7 +45,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: native-image-macos
-          path: build/graal/macos-amd64
+          path: build/graal/jiracli-mac_os_x-x86_64
 
   release:
     runs-on: ubuntu-latest
@@ -69,6 +69,6 @@ jobs:
           files: |
             RELEASE-NOTES.md
             native-image-linux/jiracli-linux-amd64
-            native-image-macos/macos-amd64
+            native-image-macos/jiracli-mac_os_x-x86_64
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
