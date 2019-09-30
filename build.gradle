@@ -93,6 +93,7 @@ graal {
   mainClass 'jiracli.CheckSum'
   outputName "jiracli-${System.getProperty("os.name").toLowerCase().replace(' ', '_') + '-' + System.getProperty("os.arch")}"
   option '--no-server'
+  option '--static'
   option '--enable-https'
   option '--enable-all-security-services'
   option '--no-fallback'
@@ -100,10 +101,10 @@ graal {
   option '--report-unsupported-elements-at-runtime'
   option '-DremoveUnusedAutoconfig=true'
   option "-J-Djava.security.properties=java.security.overrides"
-  option '-H:EnableURLProtocols=https'
+  option '-H:+JNI'
+  option '-H:EnableURLProtocols=http,https'
   option '-H:+ReportExceptionStackTraces'
   option "-H:ReflectionConfigurationFiles=${buildDir}/classes/java/main/META-INF/native-image/picocli-generated/jiracli/jiracli/reflect-config.json,graal/extra-reflect.json"
   option '--initialize-at-run-time=org.apache.http.Header,org.apache.http.params.HttpParams,org.apache.http.StatusLine,org.apache.http.ProtocolVerision,org.apache.http.client.methods.Closeable,org.apache.http.client.methods.CloseableHttpResponse,org.apache.http.ProtocolVersion,org.apache.http.HttpEntity,io.atlassian.fugue.Suppliers'
-  option '-J-Djava.security.properties=java.security.overrides'
 }
 
