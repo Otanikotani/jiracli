@@ -58,10 +58,10 @@ jobs:
         with:
           name: native-image-linux
 
-      - name: Download macos artifact
-        uses: actions/download-artifact@master
-        with:
-          name: native-image-macos
+#      - name: Download macos artifact
+#        uses: actions/download-artifact@master
+#        with:
+#          name: native-image-macos
 
       - name: GitHub Release
         uses: softprops/action-gh-release@v1
@@ -69,6 +69,6 @@ jobs:
           files: |
             RELEASE-NOTES.md
             native-image-linux/jiracli-linux-amd64
-            native-image-macos/jiracli-mac_os_x-x86_64
+#            native-image-macos/jiracli-mac_os_x-x86_64
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
